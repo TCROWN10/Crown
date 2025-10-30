@@ -1,0 +1,19 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Crown Base -->
+  <path d="M16 56H64V60H16V56Z" fill="#dd7e9a"/>
+  
+  <!-- Crown Points -->
+  <path d="M12 56L16 40L24 48L32 32L40 40L48 32L56 48L64 40L68 56H12Z" fill="#dd7e9a"/>
+  
+  <!-- Crown Jewels -->
+  <circle cx="24" cy="44" r="4" fill="#ffd700"/>
+  <circle cx="40" cy="36" r="5" fill="#ffd700"/>
+  <circle cx="56" cy="44" r="4" fill="#ffd700"/>
+  
+  <!-- Crown Details -->
+  <path d="M20 52L28 40L36 48L44 36L52 48L60 40L60 52H20Z" fill="#c06b8a"/>
+  
+  <!-- Additional Details -->
+  <circle cx="32" cy="42" r="1.5" fill="#ffffff"/>
+  <circle cx="48" cy="42" r="1.5" fill="#ffffff"/>
+</svg>

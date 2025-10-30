@@ -1,0 +1,40 @@
+{
+  "contractName": "TicketNft",
+  "contractAddress": "0x03Dd1195E494A16Dd9fc6C6a66966e37F6b93031",
+  "network": "Hedera Testnet",
+  "chainId": 296,
+  "compiler": {
+    "version": "0.8.28",
+    "settings": {
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "viaIR": true
+    }
+  },
+  "constructorArguments": [
+    "Crown Ticket",
+    "txFT",
+    "ipfs://bafybeidjmguiviozpgptmvbkq4mzivq5vp3uktw3fuouzk2i25binmfyxy"
+  ],
+  "constructorArgumentsTypes": [
+    "string",
+    "string",
+    "string"
+  ],
+  "sourceFiles": [
+    "TicketNft.sol",
+    "Error.sol"
+  ],
+  "dependencies": [
+    "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+    "@openzeppelin/contracts/access/Ownable.sol",
+    "@openzeppelin/contracts/utils/Strings.sol",
+    "@openzeppelin/contracts/utils/Base64.sol"
+  ],
+  "description": "ERC721 NFT contract for event tickets with on-chain metadata",
+  "hashScanUrl": "https://hashscan.io/testnet/address/0x03Dd1195E494A16Dd9fc6C6a66966e37F6b93031",
+  "verificationStatus": "Pending",
+  "deploymentTx": "0x58d71d696b1c0bb243622e2292f935172b585f0617aa7a38ca014b35bb409f12"
+}

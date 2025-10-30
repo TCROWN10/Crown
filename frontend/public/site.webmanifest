@@ -1,0 +1,31 @@
+{
+  "name": "Crown - Event Ticketing Platform",
+  "short_name": "Crown",
+  "description": "Secure, transparent, and fraud-proof NFT tickets on the blockchain",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#dd7e9a",
+  "icons": [
+    {
+      "src": "/favicon-16x16.svg",
+      "sizes": "16x16",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon-32x32.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/Crown-logo.svg",
+      "sizes": "40x40",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/Crown-logo-large.svg",
+      "sizes": "80x80",
+      "type": "image/svg+xml"
+    }
+  ]
+}

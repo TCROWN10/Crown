@@ -1,0 +1,185 @@
+{
+  "hederaContractVerification": {
+    "network": {
+      "name": "Hedera Testnet",
+      "chainId": 296,
+      "explorer": "https://hashscan.io/testnet",
+      "rpcUrl": "https://testnet.hashio.io/api"
+    },
+    "compiler": {
+      "version": "0.8.28",
+      "settings": {
+        "optimizer": {
+          "enabled": true,
+          "runs": 200
+        },
+        "viaIR": true
+      }
+    },
+    "deployment": {
+      "date": "2024-10-24",
+      "deployer": "0x87bC576575ff9fA1f582dCF6c052dE9a9A4313c7",
+      "transactionHashes": [
+        "0x58d71d696b1c0bb243622e2292f935172b585f0617aa7a38ca014b35bb409f12",
+        "0x796efa73373b24c6ea0b17b45bf112689b6daebb3d0374ae853e884ff8ae8518",
+        "0xe2fd13aeaeafbaf165dc409830c119e940626dbbfdfbc398b4914285ac797132"
+      ]
+    },
+    "contracts": {
+      "TicketNft": {
+        "address": "0x03Dd1195E494A16Dd9fc6C6a66966e37F6b93031",
+        "contractName": "TicketNft",
+        "sourceFile": "TicketNft.sol",
+        "constructorArgs": [
+          "Crown Ticket",
+          "txFT",
+          "ipfs://bafybeidjmguiviozpgptmvbkq4mzivq5vp3uktw3fuouzk2i25binmfyxy"
+        ],
+        "constructorArgsTypes": [
+          "string",
+          "string", 
+          "string"
+        ],
+        "hashScanUrl": "https://hashscan.io/testnet/address/0x03Dd1195E494A16Dd9fc6C6a66966e37F6b93031",
+        "dependencies": [
+          "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+          "@openzeppelin/contracts/access/Ownable.sol",
+          "@openzeppelin/contracts/utils/Strings.sol",
+          "@openzeppelin/contracts/utils/Base64.sol",
+          "Error.sol"
+        ],
+        "description": "ERC721 NFT contract for event tickets with on-chain metadata"
+      },
+      "EventTicketing": {
+        "address": "0xe3B26f999bffe5c356C659487E5D44fe14d912EB",
+        "contractName": "EventTicketing",
+        "sourceFile": "EventTicketing.sol",
+        "constructorArgs": [
+          "0x03Dd1195E494A16Dd9fc6C6a66966e37F6b93031",
+          "0x08d0d1572A8a714D90D670Ea344Dd23B1dF565Dd",
+          250
+        ],
+        "constructorArgsTypes": [
+          "address",
+          "address",
+          "uint16"
+        ],
+        "hashScanUrl": "https://hashscan.io/testnet/address/0xe3B26f999bffe5c356C659487E5D44fe14d912EB",
+        "dependencies": [
+          "@openzeppelin/contracts/access/Ownable.sol",
+          "@openzeppelin/contracts/utils/ReentrancyGuard.sol",
+          "EventTicketingLib.sol",
+          "Interface.sol",
+          "Error.sol"
+        ],
+        "description": "Main event ticketing contract for creating and managing events"
+      },
+      "TicketResaleMarket": {
+        "address": "0xc0ABf66a1D3eaf655827e054970150252a561B94",
+        "contractName": "TicketResaleMarket",
+        "sourceFile": "TicketResaleMarket.sol",
+        "constructorArgs": [
+          "0xe3B26f999bffe5c356C659487E5D44fe14d912EB",
+          "0x03Dd1195E494A16Dd9fc6C6a66966e37F6b93031",
+          "0x08d0d1572A8a714D90D670Ea344Dd23B1dF565Dd",
+          250
+        ],
+        "constructorArgsTypes": [
+          "address",
+          "address",
+          "address",
+          "uint16"
+        ],
+        "hashScanUrl": "https://hashscan.io/testnet/address/0xc0ABf66a1D3eaf655827e054970150252a561B94",
+        "dependencies": [
+          "@openzeppelin/contracts/utils/ReentrancyGuard.sol",
+          "@openzeppelin/contracts/token/ERC721/IERC721.sol",
+          "Interface.sol",
+          "Error.sol"
+        ],
+        "description": "Secondary marketplace for reselling ticket NFTs with royalty system"
+      }
+    },
+    "sourceFiles": {
+      "TicketNft.sol": {
+        "path": "contracts/TicketNft.sol",
+        "description": "Main NFT contract for event tickets",
+        "size": "5.7KB"
+      },
+      "EventTicketing.sol": {
+        "path": "contracts/EventTicketing.sol", 
+        "description": "Main event ticketing contract",
+        "size": "20.1KB"
+      },
+      "TicketResaleMarket.sol": {
+        "path": "contracts/TicketResaleMarket.sol",
+        "description": "Secondary marketplace contract",
+        "size": "9.9KB"
+      },
+      "Interface.sol": {
+        "path": "contracts/interfaces/Interface.sol",
+        "description": "Interface definitions",
+        "size": "595B"
+      },
+      "Error.sol": {
+        "path": "contracts/library/Error.sol",
+        "description": "Custom error definitions",
+        "size": "1.5KB"
+      },
+      "EventTicketingLib.sol": {
+        "path": "contracts/library/EventTicketingLib.sol",
+        "description": "Library for event ticketing logic",
+        "size": "2.7KB"
+      }
+    },
+    "verificationSteps": {
+      "step1": "Go to https://hashscan.io/testnet",
+      "step2": "Search for each contract address",
+      "step3": "Click 'Verify Contract' or 'Verify & Publish'",
+      "step4": "Upload all .sol files from verification-files/ directory",
+      "step5": "Enter constructor arguments exactly as specified",
+      "step6": "Select compiler version: 0.8.28",
+      "step7": "Submit for verification"
+    },
+    "verificationCommands": {
+      "TicketNft": "npx hardhat verify --network hederaTestnet 0x03Dd1195E494A16Dd9fc6C6a66966e37F6b93031 \"Crown Ticket\" \"txFT\" \"ipfs://bafybeidjmguiviozpgptmvbkq4mzivq5vp3uktw3fuouzk2i25binmfyxy\"",
+      "EventTicketing": "npx hardhat verify --network hederaTestnet 0xe3B26f999bffe5c356C659487E5D44fe14d912EB 0x03Dd1195E494A16Dd9fc6C6a66966e37F6b93031 0x08d0d1572A8a714D90D670Ea344Dd23B1dF565Dd 250",
+      "TicketResaleMarket": "npx hardhat verify --network hederaTestnet 0xc0ABf66a1D3eaf655827e054970150252a561B94 0xe3B26f999bffe5c356C659487E5D44fe14d912EB 0x03Dd1195E494A16Dd9fc6C6a66966e37F6b93031 0x08d0d1572A8a714D90D670Ea344Dd23B1dF565Dd 250"
+    },
+    "contractInteractions": {
+      "TicketNft": {
+        "minter": "0xe3B26f999bffe5c356C659487E5D44fe14d912EB",
+        "owner": "0x87bC576575ff9fA1f582dCF6c052dE9a9A4313c7",
+        "totalSupply": "Incremental (starts from 1)"
+      },
+      "EventTicketing": {
+        "ticketNftContract": "0x03Dd1195E494A16Dd9fc6C6a66966e37F6b93031",
+        "feeRecipient": "0x08d0d1572A8a714D90D670Ea344Dd23B1dF565Dd",
+        "platformFee": "250 bps (2.5%)",
+        "owner": "0x87bC576575ff9fA1f582dCF6c052dE9a9A4313c7"
+      },
+      "TicketResaleMarket": {
+        "eventTicketingContract": "0xe3B26f999bffe5c356C659487E5D44fe14d912EB",
+        "ticketNftContract": "0x03Dd1195E494A16Dd9fc6C6a66966e37F6b93031",
+        "feeRecipient": "0x08d0d1572A8a714D90D670Ea344Dd23B1dF565Dd",
+        "royaltyFee": "250 bps (2.5%)",
+        "maxPrice": "1000 ether",
+        "owner": "0x87bC576575ff9fA1f582dCF6c052dE9a9A4313c7"
+      }
+    },
+    "status": {
+      "deployment": "✅ Completed",
+      "verification": "❌ Pending",
+      "contractsFunctional": "✅ Yes",
+      "abiVisible": "❌ No (requires verification)"
+    },
+    "notes": [
+      "All contracts are successfully deployed and functional on Hedera testnet",
+      "Constructor arguments are exact values from deployment transaction logs",
+      "Fee recipient address (0x08d0d1572A8a714D90D670Ea344Dd23B1dF565Dd) differs from deployer address",
+      "IPFS URI is used for ticket images instead of HTTP URL",
+      "Both EventTicketing and TicketResaleMarket use 250 basis points (2.5%) for fees",
+      "Verification will make ABI and source code visible on HashScan explorer"
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "compiler": {
+    "version": "0.8.28",
+    "settings": {
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "viaIR": true
+    }
+  },
+  "contracts": {
+    "TicketNft": {
+      "address": "0x03Dd1195E494A16Dd9fc6C6a66966e37F6b93031",
+      "sourceFile": "TicketNft.sol",
+      "constructorArgs": [
+        "Crown Ticket",
+        "txFT",
+        "ipfs://bafybeidjmguiviozpgptmvbkq4mzivq5vp3uktw3fuouzk2i25binmfyxy"
+      ],
+      "dependencies": [
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "@openzeppelin/contracts/utils/Strings.sol",
+        "@openzeppelin/contracts/utils/Base64.sol",
+        "Error.sol"
+      ]
+    },
+    "EventTicketing": {
+      "address": "0xe3B26f999bffe5c356C659487E5D44fe14d912EB",
+      "sourceFile": "EventTicketing.sol",
+      "constructorArgs": [
+        "0x03Dd1195E494A16Dd9fc6C6a66966e37F6b93031",
+        "0x08d0d1572A8a714D90D670Ea344Dd23B1dF565Dd",
+        250
+      ],
+      "dependencies": [
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "@openzeppelin/contracts/utils/ReentrancyGuard.sol",
+        "EventTicketingLib.sol",
+        "Interface.sol",
+        "Error.sol"
+      ]
+    },
+    "TicketResaleMarket": {
+      "address": "0xc0ABf66a1D3eaf655827e054970150252a561B94",
+      "sourceFile": "TicketResaleMarket.sol",
+      "constructorArgs": [
+        "0xe3B26f999bffe5c356C659487E5D44fe14d912EB",
+        "0x03Dd1195E494A16Dd9fc6C6a66966e37F6b93031",
+        "0x08d0d1572A8a714D90D670Ea344Dd23B1dF565Dd",
+        250
+      ],
+      "dependencies": [
+        "@openzeppelin/contracts/utils/ReentrancyGuard.sol",
+        "@openzeppelin/contracts/token/ERC721/IERC721.sol",
+        "Interface.sol",
+        "Error.sol"
+      ]
+    }
+  },
+  "network": {
+    "name": "Hedera Testnet",
+    "chainId": 296,
+    "explorer": "https://hashscan.io/testnet"
+  },
+  "deployment": {
+    "date": "2024-10-24",
+    "deployer": "0x87bC576575ff9fA1f582dCF6c052dE9a9A4313c7",
+    "transactionHashes": [
+      "0x58d71d696b1c0bb243622e2292f935172b585f0617aa7a38ca014b35bb409f12",
+      "0x796efa73373b24c6ea0b17b45bf112689b6daebb3d0374ae853e884ff8ae8518",
+      "0xe2fd13aeaeafbaf165dc409830c119e940626dbbfdfbc398b4914285ac797132"
+    ]
+  }
+}

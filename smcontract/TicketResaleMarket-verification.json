@@ -1,0 +1,41 @@
+{
+  "contractName": "TicketResaleMarket",
+  "contractAddress": "0xc0ABf66a1D3eaf655827e054970150252a561B94",
+  "network": "Hedera Testnet",
+  "chainId": 296,
+  "compiler": {
+    "version": "0.8.28",
+    "settings": {
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "viaIR": true
+    }
+  },
+  "constructorArguments": [
+    "0xe3B26f999bffe5c356C659487E5D44fe14d912EB",
+    "0x03Dd1195E494A16Dd9fc6C6a66966e37F6b93031",
+    "0x08d0d1572A8a714D90D670Ea344Dd23B1dF565Dd",
+    250
+  ],
+  "constructorArgumentsTypes": [
+    "address",
+    "address",
+    "address",
+    "uint16"
+  ],
+  "sourceFiles": [
+    "TicketResaleMarket.sol",
+    "Interface.sol",
+    "Error.sol"
+  ],
+  "dependencies": [
+    "@openzeppelin/contracts/utils/ReentrancyGuard.sol",
+    "@openzeppelin/contracts/token/ERC721/IERC721.sol"
+  ],
+  "description": "Secondary marketplace for reselling ticket NFTs with royalty system",
+  "hashScanUrl": "https://hashscan.io/testnet/address/0xc0ABf66a1D3eaf655827e054970150252a561B94",
+  "verificationStatus": "Pending",
+  "deploymentTx": "0xe2fd13aeaeafbaf165dc409830c119e940626dbbfdfbc398b4914285ac797132"
+}
