@@ -32,7 +32,8 @@ Crown is a next-generation event ticketing platform built on Hedera Hashgraph, l
 
 - Node.js 18+ and npm
 - Hedera Testnet account with HBAR
-- MetaMask or compatible wallet
+- **Recommended**: [HashPack Wallet](https://hashpack.app) (Native Hedera wallet)
+- **Alternative**: MetaMask or compatible wallet (via WalletConnect)
 
 ## 🚀 Getting Started
 
