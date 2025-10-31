@@ -22,8 +22,9 @@ export function HashPackButton({ className }: HashPackButtonProps) {
 
       await connectHashPack()
       toast.success('Connected to HashPack wallet!')
-    } catch (error: any) {
-      toast.error(error.message || 'Failed to connect HashPack wallet')
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : 'Failed to connect HashPack wallet'
+      toast.error(errorMessage)
     }
   }
 
@@ -31,7 +32,7 @@ export function HashPackButton({ className }: HashPackButtonProps) {
     try {
       await disconnectHashPack()
       toast.success('Disconnected from HashPack wallet')
-    } catch (error: any) {
+    } catch {
       toast.error('Failed to disconnect HashPack wallet')
     }
   }

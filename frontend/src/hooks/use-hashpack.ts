@@ -8,19 +8,17 @@ interface HashPackProvider {
   on?: (event: string, callback: (accounts: string[]) => void) => void
 }
 
-interface HashPackWindow {
-  hashpack?: {
-    provider?: HashPackProvider
-    isHashPack?: boolean
-  }
-  hashPack?: {
-    provider?: HashPackProvider
-    isHashPack?: boolean
-  }
-}
-
 declare global {
-  interface Window extends HashPackWindow {}
+  interface Window {
+    hashpack?: {
+      provider?: HashPackProvider
+      isHashPack?: boolean
+    }
+    hashPack?: {
+      provider?: HashPackProvider
+      isHashPack?: boolean
+    }
+  }
 }
 
 export function useHashPack() {
